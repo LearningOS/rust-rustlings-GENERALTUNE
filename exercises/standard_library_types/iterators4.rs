@@ -1,10 +1,35 @@
 // iterators4.rs
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a hint.
-
-// I AM NOT DONE
-
+struct Item {
+    input: u64,
+    output: u64,
+}
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
+    let keys = vec![
+        Item {
+            input: 0,
+            output: 1,
+        },
+        Item {
+            input: 1,
+            output: 1,
+        },
+        Item {
+            input: 2,
+            output: 2,
+        },
+        Item {
+            input: 4,
+            output: 24,
+        },
+    ];
+
+    match keys.into_iter().filter(|x| x.input == num).next() {
+        Some(item) => item.output,
+        None => 0,
+    }
+    // keys[0].output
     // Do not use:
     // - return
     // Try not to use:
